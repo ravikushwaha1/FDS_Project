@@ -1,0 +1,96 @@
+@import './variables.css';
+
+/* Mobile First Approach */
+
+/* Mobile Styles (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  h1 {
+    font-size: var(--font-xl);
+  }
+
+  h2 {
+    font-size: var(--font-lg);
+  }
+
+  /* Navbar Responsive */
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    padding: var(--spacing-md);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Grid becomes single column */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cards full width */
+  .card {
+    margin: var(--spacing-xs);
+  }
+
+  /* Forms full width */
+  .form-control {
+    width: 100%;
+  }
+
+  /* Stack flex items */
+  .flex {
+    flex-direction: column;
+  }
+
+  /* Tables responsive */
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Tablet Styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Styles (1025px and above) */
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) and (max-height: 500px) {
+  .navbar {
+    position: relative;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar, .footer, .btn {
+    display: none;
+  }
+}

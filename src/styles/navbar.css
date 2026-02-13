@@ -1,0 +1,51 @@
+@import './variables.css';
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: var(--font-xl);
+  font-weight: bold;
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--white-color);
+  text-decoration: none;
+  padding: var(--spacing-xs);
+  transition: var(--transition);
+}
+
+.navbar-link:hover {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: var(--font-xl);
+  cursor: pointer;
+}
