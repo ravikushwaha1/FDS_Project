@@ -6,7 +6,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
   
-  // Get user from localStorage (will be replaced with context later)
   const token = localStorage.getItem('token')
   const userRole = localStorage.getItem('userRole')
 
@@ -14,7 +13,7 @@ const Navbar = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('userRole')
     localStorage.removeItem('user')
-    navigate('/login')
+    navigate('/')
   }
 
   return (
@@ -25,8 +24,18 @@ const Navbar = () => {
         </Link>
 
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
+          {/* Public Links - Always visible */}
+          <Link to="/" className="navbar-link">
+            Home
+          </Link>
           <Link to="/jobs" className="navbar-link">
-            Browse Jobs
+            Jobs
+          </Link>
+          <Link to="/about" className="navbar-link">
+            About
+          </Link>
+          <Link to="/contact" className="navbar-link">
+            Contact
           </Link>
 
           {!token ? (
